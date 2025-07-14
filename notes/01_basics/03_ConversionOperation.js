@@ -39,7 +39,7 @@ console.log(typeof IsLoggedInconverted); //1(true) 0(false)
 //conversion of number into boolean
 
 let yes = 9;
-let no = -13;
+let no = 0;
 let yes_converted = Boolean(yes);
 let no_converted = Boolean(no);
 

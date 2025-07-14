@@ -23,7 +23,7 @@ console.log("02" > 1); // similar
 console.log(null > 0); //false
 console.log(null == 0); // false
 console.log(null >= 0); // true
-
+ 
 //! okay lets learn something new again why this is happening
 //? ==(equality checks) and <= , >= , > , <(comparisions) works differently
 //? comparisions convert "NULL" to number treating it as "0"
