@@ -252,8 +252,8 @@ console.log(myArr[3]);  // 1
 myArr[0] = "samirande";  // Changes original array
 
 // Basic Array Methods
-myArr.push("nishank is the goat");    // Add to end
-myArr.unshift("nishank is better");   // Add to beginning
+myArr.push("rahua is the goat");    // Add to end
+myArr.unshift("rahua is better");   // Add to beginning
 myArr.pop();                          // Remove from end  
 myArr.shift();                        // Remove from beginning
 
@@ -330,13 +330,13 @@ let user = {};             // Literal syntax (doesn't create singleton)
 let mySym = Symbol("Mysymbol");
 
 let user = {
-  name: "nishank",
+  name: "rahua",
   age: 18,
   location: "jaipur", 
-  email: "nishank@gmail.com",
+  email: "rahua@gmail.com",
   isLoggedIn: true,
-  mySym: "nishank",      // String key "mySym"
-  [mySym]: "nishank"     // Symbol key (actual symbol)
+  mySym: "rahua",      // String key "mySym"
+  [mySym]: "rahua"     // Symbol key (actual symbol)
 };
 
 // Accessing Object Properties
@@ -408,9 +408,9 @@ const obj3 = Object.assign({}, obj1, obj2);
 
 // Working with Array of Objects (Database-like)
 const users = [
-  { id: 1, email: "nishank@gmail.com" },
+  { id: 1, email: "rahua@gmail.com" },
   { id: 2, email: "new@gmail.com" },
-  { id: 3, email: "nishank" }
+  { id: 3, email: "rahua" }
 ];
 
 console.log(users[2].email);  // Access third user's email
@@ -434,7 +434,7 @@ const { courseInstructor } = course;
 console.log(courseInstructor);  // "hitesh sir"
 
 // JSON API Structure
-// Objects: { "name": "nishank", "price": "free" }
+// Objects: { "name": "rahua", "price": "free" }
 // Arrays: [ {}, {}, {} ]`,
   },
   {
@@ -790,12 +790,12 @@ const addtwo = function (num) {
       "how arrow function is declared and called, parameters , arguments",
     icon: <Database className="w-5 h-5" />,
     color: "bg-teal-500",
-    content: `nishank
+    content: `rahua
    const user = {
-  name: "nishank",
+  name: "rahua",
   age: 18,
   location: "jaipur",
-  email: "nishank@gmail.com",
+  email: "rahua@gmail.com",
   isLoggedIn: true,
 
   welcomeMessage: function () {
@@ -868,7 +868,7 @@ imlicitret(909012, 9);
 //? Imagine returning an object implicitly (must wrap object in parentheses)
 
 const implRetObj = () => ({
-  username: "nishank",
+  username: "rahua",
   age: 23,
   number: 123223423,
 });
