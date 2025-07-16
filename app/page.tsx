@@ -620,7 +620,7 @@ function handleObject(anyobject) {
     " son of Mr " + anyobject.fathersname +
     " of age " + anyobject.age +
     " from class " + anyobject.class +
-    "\nis required to get back to work at your time " + anyobject.timings
+    "nis required to get back to work at your time " + anyobject.timings
   );
 }
 
@@ -707,6 +707,175 @@ handleArray([100, 200, 300, 400]);
 // • Always call a function with () to execute it.
 //   Just writing the name won't do anything.
 `,
+  },
+  {
+    id: "new",
+    title: "scope",
+    description: "scope - block scope , global scope",
+    icon: <Database className="w-5 h-5" />,
+    color: "bg-violet-500",
+    content: `//-------------------------------------------------------scope------------------------------------------------------------------------------------------------------------------//
+
+//?global scope
+
+if (true) {
+  //? block scope
+}
+
+//! {} --- with function and if else statemenst statemenet it is called scope
+
+//---------------------------------------------------video-----------------------------------------------------------//
+
+if (true) {
+  let a = 1;
+  const B = 2;
+  var c = 3;
+}
+
+// console.log(a);
+// console.log(B);
+console.log(c); //!giving value out of the scope which can cause problem in big databases
+
+//-------------------------------------------nested scope------------------------------------------//
+
+function one() {
+  const username = "hitesh";
+
+  function two() {
+    const website = "youtube.com";
+    console.log(username);
+  }
+  //   console.log(website);
+  two();
+}
+one();
+
+//-------------------------------------------in if else------------------------------------------//
+
+if (true) {
+  const username = "hitesh";
+  if (username === "hitesh") {
+    const website = "youtube.com";
+    console.log(username + website);
+  }
+  //   console.log(website);
+}
+
+// console.log(username);
+
+//-------------------------------------------interesting------------------------------------------//
+addone(5);
+
+function addone(num) {
+  return num + 1;
+}
+
+addtwo(5); //! gives an error as it cannot be accessed before declaration
+
+const addtwo = function (num) {
+  return num + 2;
+};
+
+
+// Key Points:
+// • Objects store key-value pairs
+// • Use symbols for unique keys
+// • this keyword refers to the object
+// • Object.freeze() prevents modifications`,
+  },
+  {
+    id: "arrow",
+    title: "arrow-functions",
+    description:
+      "how arrow function is declared and called, parameters , arguments",
+    icon: <Database className="w-5 h-5" />,
+    color: "bg-teal-500",
+    content: `nishank
+   const user = {
+  name: "nishank",
+  age: 18,
+  location: "jaipur",
+  email: "nishank@gmail.com",
+  isLoggedIn: true,
+
+  welcomeMessage: function () {
+    console.log("hey, " + this.name + " welcome to the website"); //? this.name -- this sets the current context
+    console.log(this); //? {} this tells us the current context of block scope
+  },
+};
+
+user.welcomeMessage(); //? running through the context of user object
+
+user.name = "gangwar sahab";
+
+user.welcomeMessage(); //? running through the context of user object but the name has been changed
+
+console.log(this); //? {} this tells us the current context of global scope ---- in browser, this will be the Window object
+
+//--------------------- this function only works in objects not in function as such -----------------------------------------------//
+
+(function chai1() {
+  console.log(this); /*ef *1> Object [global] {
+  global: [Circular *1],
+  queueMicrotask: [Function: queueMicrotask],
+  clearImmediate: [Function: clearImmediate],
+  setImmediate: [Function: setImmediate] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  structuredClone: [Getter/Setter],
+  clearInterval: [Function: clearInterval],
+  clearTimeout: [Function: clearTimeout],
+  setInterval: [Function: setInterval],
+  setTimeout: [Function: setTimeout] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  atob: [Getter/Setter],
+  btoa: [Getter/Setter],
+  performance: [Getter/Setter],
+  fetch: [AsyncFunction: fetch]*/ //? this comes as result in Node.js runtime
+})();
+
+(function chai() {
+  let username = "hitesh";
+  console.log(this.username); // undefined
+})();
+// undefined -- //? 'this' works well in objects, not as much in regular functions
+
+//!--------------------------------------- Arrow Function ----------------------------//
+
+//? defined as
+arrow = () => {
+  let username = "hitesh";
+  console.log(this); // {} – no own 'this' binding in arrow functions
+};
+
+//------------------------------------ Arrow Function with Return -------------------------//
+
+addTwo = (num1, num2) => {
+  return console.log(num1 + num2);
+};
+
+console.log(addTwo(1, 2));
+
+//-------------------- Implicit Return ----------------------------//
+
+impret = (num1, num2) => num1 + num2;
+console.log(impret(1, 2));
+
+const imlicitret = (num1, num2) => console.log(num1 + num2);
+imlicitret(909012, 9);
+
+//? Imagine returning an object implicitly (must wrap object in parentheses)
+
+const implRetObj = () => ({
+  username: "nishank",
+  age: 23,
+  number: 123223423,
+});
+
+console.log(implRetObj());
+
+    `,
   },
 ];
 

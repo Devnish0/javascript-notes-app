@@ -83,6 +83,7 @@ function username2(username) {
   return `${username} just logged out`;
 }
 
+
 console.log(username2());
 
 //!Default parameter

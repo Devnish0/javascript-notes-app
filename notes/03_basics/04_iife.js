@@ -1,7 +1,5 @@
 //! immediately invoked function expression//
 
-const { log } = require("util");
-
 //? anonymous functions hai nothing else
 
 //? global scope pollution problem

@@ -49,3 +49,4 @@ console.log("9" == 9); // converts the string into number
 /* examples */
 console.log("9" === 9); // false because stringed 9 is not equals to numbered 9
 console.log(null === 0); // false
+/* nishank */
