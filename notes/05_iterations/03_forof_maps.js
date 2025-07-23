@@ -5,7 +5,7 @@
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
 for (const i of arr) {
-  console.log(i);
+  console.log(i); // normally prints the values as 1,2,3,4,5,6,7
 }
 
 //? loops on arrays with strings
@@ -20,7 +20,7 @@ for (const i of arr1) {
 const greetings = "hello world";
 
 for (const greet of greetings) {
-  if (greet === " ") {
+  if (greet === " ") {// here continue is used in to tackle with the blank places
     continue;
   }
   console.log(greet);
@@ -50,6 +50,8 @@ for (const element of map) {
 }
 
 //? for holding key value differently in maps
+
+//alag tareeke se print karane ke liye for maps
 
 for (const [key, value] of map) {
   console.log(key, `:-`, value);
