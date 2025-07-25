@@ -19,7 +19,6 @@ coding.forEach((i) => {
 function printMe(item) {
   console.log(item);
 }
-
 // coding.forEach(printMe);
 
 //?----parameters can contain value,index,and entire array---//
@@ -48,4 +47,3 @@ const myCoding = [
 myCoding.forEach((element, ind) => {
   console.log(element.languageFileName); //? we can acces whtever we want
 });
-
