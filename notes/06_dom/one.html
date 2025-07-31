@@ -1,0 +1,192 @@
+<!-- ! DOM - Document Object Model -->
+<!-- * HTML collection, node collection, arrays are different from each other -->
+
+<!-- ? Common getElementById methods: -->
+<!-- * document.getElementById('firstHeading') - gets element by ID -->
+<!-- * document.getElementById('firstHeading').innerHTML - changes inner HTML -->
+
+<!-- ? Getting element properties: -->
+<!-- * document.getElementById('title').id - returns "title" -->
+<!-- * document.getElementById('title').className - returns "heading" -->
+<!-- * document.getElementById('title').getAttribute('id') - returns "title" -->
+<!-- * document.getElementById('title').getAttribute('class') - returns "heading" -->
+
+<!-- ? Setting attributes: -->
+<!-- * document.getElementById('title').setAttribute('class', 'nishank') (sets the class name to nishank) -->
+
+<!-- ?storing the document.getElementById('title') in a variable -->
+<!-- * const title = document.getElementById('title') -->
+
+<!-- ? Changing style with getElementsByClassName -->
+<!-- ! Wrong way: -->
+<!-- * document.getElementsByClassName('bg-black').style.backgroundColor="red" (class has more than one element)-->
+<!-- ! Correct ways: -->
+<!-- * document.getElementsByClassName('bg-black')[0].style.backgroundColor="red" -->
+<!-- ! OR loop through all elements: -->
+<!-- * const elements = document.getElementsByClassName('bg-black');
+     for(let element of elements) {
+         element.style.backgroundColor = "red";     } -->
+
+<!-- !difference between textcontent and innerHTML and innerText -->
+<!-- ? <h1 id="title" class="heading"> DOM learning on Chai aur Code <span style="display:none;">test text</span> </h1> -->
+<!-- * innerHTML - returns the HTML content INCLUDING tags: "<span style="display: none">test text</span> DOM learning on Chai aur Code" -->
+<!-- * textContent - returns ALL text content, even hidden elements: "test text DOM learning on Chai aur Code" -->
+<!-- * innerText - returns only VISIBLE text (respects CSS styling): "DOM learning on Chai aur Code" -->
+
+<!-- ? adding content to the page -->
+<!-- * const para = document.getElementById('para'); para.innerHTML = '<p>New content added</p>'; -->
+<!-- * use .innerHTML => changes HTML content (including hidden elements) -->
+<!-- * use .textContent => changes ALL text (including hidden elements) -->
+<!-- * use .innerText => changes only VISIBLE text (respects CSS display) -->
+
+<!-- ! Query Selectors and CSS Selector Patterns -->
+<!-- * document.querySelector() - selects the FIRST element that matches a CSS selector -->
+
+<!-- ? Basic CSS Selectors: -->
+<!-- * '#id'          -> document.querySelector('#title')     - select by ID -->
+<!-- * Example: document.querySelector('#title').style.color = 'red' -->
+
+<!-- * '.class'       -> document.querySelector('.heading')   - select by class -->
+<!-- * Example: document.querySelector('.heading').textContent = 'New Heading' -->
+
+<!-- * 'tag'          -> document.querySelector('h1')        - select by tag name -->
+<!-- * Example: document.querySelector('h1').style.fontSize = '32px' -->
+
+<!-- * 'parent child' -> document.querySelector('div h1')    - h1 inside div (any level) -->
+<!-- * Example: document.querySelector('div h1').style.margin = '20px' -->
+
+<!-- * 'parent > child' -> document.querySelector('div > h1') - h1 directly inside div -->
+<!-- * Example: document.querySelector('div > h1').style.padding = '10px' -->
+
+<!-- ? Advanced CSS Selectors: -->
+<!-- * '[attribute]'  -> document.querySelector('[type="text"]') - by attribute -->
+<!-- * Example: document.querySelector('[type="password"]').style.border = '2px solid red' -->
+
+<!-- * ':first-child' -> document.querySelector('h1:first-child') - first h1 -->
+<!-- * Example: document.querySelector('h1:first-child').style.fontWeight = 'bold' -->
+
+<!-- * ':nth-child(2)'-> document.querySelector('h1:nth-child(2)') - second h1 -->
+<!-- * Example: document.querySelector('h1:nth-child(2)').style.color = 'blue' -->
+
+<!-- * 'div.class'    -> document.querySelector('div.bg-black') - div with class -->
+<!-- * Example: document.querySelector('div.bg-black').style.padding = '20px' -->
+
+<!-- * 'h1, h2'      -> document.querySelectorAll('h1, h2') - multiple elements -->
+<!-- * Example: document.querySelectorAll('h1, h2').forEach(el => el.style.fontFamily = 'Arial') -->
+
+<!-- ? Pseudo-class Selectors: -->
+<!-- * ':hover'       -> document.querySelector('button:hover') - when mouse is over button -->
+<!-- * Example: document.querySelector('button').addEventListener('mouseover', e => e.target.style.backgroundColor = 'blue') -->
+
+<!-- * ':active'      -> document.querySelector('button:active') - when being clicked -->
+<!-- * Example: document.querySelector('button').addEventListener('mousedown', e => e.target.style.transform = 'scale(0.95)') -->
+
+<!-- * ':focus'       -> document.querySelector('input:focus') - when element has focus -->
+<!-- * Example: document.querySelector('input').addEventListener('focus', e => e.target.style.outline = '2px solid green') -->
+
+<!-- ! Better Practice - Using Event Listeners: -->
+<!-- * For Hover: -->
+<!-- * const btn = document.querySelector('.btn')
+     btn.addEventListener('mouseover', () => btn.style.backgroundColor = 'red')
+     btn.addEventListener('mouseout', () => btn.style.backgroundColor = 'blue') -->
+
+<!-- * For Active (Click): -->
+<!-- * const btn = document.querySelector('.btn')
+     btn.addEventListener('mousedown', () => btn.style.transform = 'scale(0.95)')
+     btn.addEventListener('mouseup', () => btn.style.transform = 'scale(1)') -->
+
+<!-- * For Focus: -->
+<!-- * const input = document.querySelector('input')
+     input.addEventListener('focus', () => input.style.border = '2px solid green')
+     input.addEventListener('blur', () => input.style.border = '1px solid gray') -->
+
+<!-- ! querySelectorAll -->
+<!-- * document.querySelectorAll() - selects ALL elements that match the selector -->
+<!-- ? Returns NodeList (array-like object) that you can loop through -->
+<!-- * document.querySelectorAll('h1') - gets all h1 elements -->
+<!-- * const h1s = document.querySelectorAll('h1')
+     h1s.forEach(h1 => h1.style.color = 'red') -->
+
+<!-- ? Why use Query Selectors? -->
+<!-- * 1. More flexible than getElementById/ClassName (uses CSS selectors) -->
+<!-- * 2. Can select elements by complex patterns -->
+<!-- * 3. Modern and powerful way to select elements -->
+<!-- * 4. Returns NodeList which has better methods than HTMLCollection -->
+<!-- * 5. Supports chaining (selecting nested elements easily) -->
+<!-- * 6. Works with all browsers (even old ones) -->
+<!-- * 7. Can select elements based on attributes, states, and more -->
+<!-- * 8. Allows selecting multiple elements at once -->
+<!-- * 9. Makes code cleaner and easier to read -->
+<!-- * 10. Can be used with querySelectorAll for multiple elements -->
+<!-- * 11. Supports pseudo-classes like :hover, :active, :focus -->
+<!-- * 12. Can select elements based on their position in the DOM -->
+<!-- * 13. Allows selecting elements based on their relationship to other elements -->
+* Difference between NodeList and HTMLCollectionh
+<!--   - NodeList: 
+       - Can be static or live
+       - Supports forEach and other array methods
+       - Can contain different types of nodes (elements, text, etc.)
+     - HTMLCollection:
+       - Always live (updates automatically)
+       - Does not support forEach (must convert to array first)
+       - Only contains element nodes -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM learning</title>
+    <style>
+      .bg-black {
+        background-color: black;
+        color: greenyellow;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div class="bg-black">
+      <h1 id="title" class="heading">
+        <span style="display: none">test text</span>
+        DOM learning on Chai aur Code
+      </h1>
+      <div>
+        <p id="para">Lorem ipsum dolor sit.</p>
+        <h1 class="heading">Welcome to DOM Manipulation</h1>
+
+        <h1 class="heading">JavaScript is Awesome</h1>
+
+        <h1 class="heading">Learning Web Development</h1>
+
+        <h1 class="heading">HTML Elements Demo</h1>
+
+        <h1 class="heading">Dynamic Content Creation</h1>
+
+        <h1 class="heading">Practice Makes Perfect</h1>
+
+        <input type="password" placeholder="Enter password" / >
+      </div>
+    </div>
+    <ul>
+      <!-- we can also use querySelector to get to ul
+       then saving it in a constant and running querySelector again on that constant -->
+      <li>nishank</li>
+      <li>nsihank</li>
+      <li>nsihank is goat</li>
+      <li>nsihank is goat</li>
+      <li>nsihank is goat</li>
+    </ul>
+  </body>
+</html>
+
+<!-- archive -->
+<!-- html collection , node collection, arrays are different from each other -->
+<!-- document.getElementById('firstHeading') --- this helps us to get to the element by ids -->
+<!-- document.getElementById('firstHeading').innerHTML = '<p>nsihank is goat</p>' used for changing the inner html -->
+<!-- next video from the below code -->
+<!-- document.getElementById('title').id (title) (gives the id)-->
+<!-- document.getElementById('title').className (heading) (gives the class name)-->
+<!-- document.getElementById('title').getAttribute('id') (title) (gives the id)-->
+<!-- document.getElementById('title').getAttribute('class') (heading) (gives the class name)-->
+<!-- document.getElementById('title').setAttribute('class') (gives the style) -->
+<!-- document.getElementById("title").setAttribute("class","nsihank") (sets the class to nsihank) -->

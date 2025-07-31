@@ -1,4 +1,4 @@
-// randome s
+fucn// randome s
 
 const quotes = [
   "Honesty is the best policy",

@@ -68,7 +68,7 @@ console.log(test1.replace(/is/g, `was`)); // Devnwash was great (replaces all 'i
 //y — sticky: matches only from the last index position (lastIndex).
 // You can combine flags, for example: /2/gi (global and case-insensitive).
 console.log(test1.slice(0, 6)); // Devnis (returns substring from index 0 to 6)
-console.log(test1.substring(0, 6)); //! Devnis (returns substring from index 0 to 6) can be negative
+console.log(test1.substring(0, 6)); //! Devnis (returns substrfucning from index 0 to 6) can be negative
 console.log(test1.substr(0, 6)); // Devnis (returns substring from index 0 to 6)
 console.log(test1.toLowerCase()); // devnish is great (converts to lowercase)
 console.log(test1.toUpperCase()); // DEVNISH IS GREAT (converts to uppercase)

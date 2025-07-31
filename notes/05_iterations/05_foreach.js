@@ -5,7 +5,7 @@ const coding = ["coding", "js", "java", "javascript"];
 //?----normal declaration----//
 
 coding.forEach(function (i) {
-  //   console.log(i);
+    console.log(i);
 });
 
 //?----arrow function declaration--//
@@ -24,7 +24,7 @@ function printMe(item) {
 //?----parameters can contain value,index,and entire array---//
 
 coding.forEach((val, ind, arr) => {
-  //   console.log(val, ind, arr);
+    console.log(val, ind, arr);
 });
 
 //?----basic use of for each loop in the arrays--//
