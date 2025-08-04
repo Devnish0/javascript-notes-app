@@ -1,6 +1,14 @@
 const name = "kachua";
 const repocount = 50;
 
+//! adding strings in another way
+
+let greeting = "Hi";
+greeting += " there!";
+console.log(greeting); // "Hi there!"
+
+//
+
 console.log("hello my name is " + name + " and my repo count is " + repocount);
 
 //! can do that but is not ideal to do it like this;
@@ -19,7 +27,7 @@ console.log(name3[0]); // accessing key value pair
 console.log(name3.length); // we can use variable.(something )  to access different things
 //example this above expression tells me the length of string
 
-console.log(name3.__proto__);   
+console.log(name3.__proto__);
 
 // Difference between primitive string and String object:
 const primitiveStr = "hello"; // primitive string (stack memory)
