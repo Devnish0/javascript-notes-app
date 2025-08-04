@@ -32,7 +32,7 @@ const secondLang = document.querySelector("li:nth-child(2)"); //counting starts 
 // secondLang.innerHTML = "nishank gangwar"; // but this is also a bad approach
 //? secondapproach
 
-const newli = document.createElement("li");
+const newli = document.createElement("li"); //creates new element <li></li>
 newli.textContent = "mojo";
 secondLang.replaceWith(newli); //we can use replace with to repplace the nth child
 
@@ -48,7 +48,3 @@ firstlang.outerHTML = "<li>typescript</li>";
 
 const thirdLang = document.querySelector("li:last-child"); //selecting the third child
 // thirdLang.remove(); //removing the third child
-
-let greeting = "Hi";
-greeting += " there!";
-console.log(greeting); //? concatenation
