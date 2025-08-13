@@ -1,4 +1,5 @@
 const form = document.querySelector("form"); //! calling the form
+
 // const height = document.querySelector("#height"); //! calling the input field of hei
 // const weight = document.querySelector("#weight"); //! calling the input field of weight
 // const submit = document.querySelector("#submit"); //! calling the submit button
@@ -16,7 +17,7 @@ form.addEventListener("submit", (e) => {
 
   //!checking if the input is number or not
   if (height === String || height < 0 || height === "" || isNaN(height)) {
-    result.innerHTML = "please give a valid height";
+    result.innerHTML = "<h4>Please give a valid height</h4>";
     result.style.color = "red";
     return; // stop execution here
   } else if (
@@ -25,36 +26,37 @@ form.addEventListener("submit", (e) => {
     weight === "" ||
     isNaN(weight)
   ) {
-    result.innerHTML = "please give a valid weight";
+    result.innerHTML = "<h4>Please give a valid weight</h4>";
     result.style.color = "red";
     return;
   }
   //!making sure the inputs are valid
   if (height <= 65.24) {
     result.innerHTML =
-      "aap to Chandra Bahadur Dangi se bhi chote ho <br> (please give a valid height)";
+      "<h4>aap to Chandra Bahadur Dangi se bhi chote ho <br> (please give a valid height)</h4>";
     result.style.color = "red";
     return;
   } else if (height >= 251) {
     result.innerHTML =
-      "oh khali ke chacha batau abhi? <br> (please give a valid height)";
+      "<h4>oh khali ke chacha batau abhi? <br> (please give a valid height)</h4>";
     result.style.color = "red";
     return;
   }
   if (weight <= 10) {
-    result.innerHTML = "aap murgi to nahi?? <br> (please give a valid weight)";
+    result.innerHTML =
+      "<h4>aap murgi to nahi?? <br> (please give a valid weight)</h4>";
     result.style.color = "red";
     return;
   } else if (weight >= 635) {
     result.innerHTML =
-      "bhai teri gaadi ka BMI nikalna hai? {please give a valid weight}";
+      "<h4>bhai teri gaadi ka BMI nikalna hai? <br> (please give a valid weight)</h4>";
     return;
   }
 
   //! calculation
   const output = weight / ((height * height) / 10000);
 
-  result.innerHTML = `Your BMI is <b>${output.toFixed(1)}</b>`; // deleted the whole div
+  result.innerHTML = `<h3>Your BMI is <b>${output.toFixed(1)}</b></h3>`; // deleted the whole div
   result.style.color = "white";
 
   //? personal quotes
@@ -69,5 +71,20 @@ form.addEventListener("submit", (e) => {
 
   // Personal quotes
 });
+//! changing the wallpaper
+const changeButton = document.querySelector("#changeBackground");
+changeButton.addEventListener("click", (e) => {
+  //   alert(e);
+  const wallppr = document.querySelector(".background-container");
+  const wallpaper = ["first.jpg", "second.jpg", "third.jpg"];
+  //   const randomIndex = Math.floor(Math.random() * wallpaper.length);
+
+  wallppr.setAttribute(
+    "style",
+    `background-image: url(wallpapers/${wallpaper[randomIndex]});`
+  );
+});
+
+// wallppr.style.backgroundImage = "url('wallpaper/second.jpg')";
 // const shame = document.querySelector("#shame");
 // shame.innerHTML = "nishank";
