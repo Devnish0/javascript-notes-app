@@ -7,7 +7,7 @@
 function addList(language) {
   const li = document.createElement("li"); //create an element through this
   li.innerHTML = language; // changee the inner html in it
-  document.querySelector(".language").appendChild(li); // add the element in the div or elmement
+  document.querySelector(".language").appendChild(li); // add the element in the div or element
 }
 addList("nishank"); //adding lists
 addList("gangwar");
