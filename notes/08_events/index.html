@@ -3,10 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>events</title>
+    <title>htnml Events</title>
   </head>
-  <body>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <!--        we can use on click events attribute to run a specific script  -->
+        <!--        for normal projects or small projects onclick on the html is fine but keep in mind it isnt scalable-->
+        <!--        but for the big projects we should separate our code or better to use event listeners -->
+        <!--        < onclick="console.log('something something')"><>-->
+        <!--        it also talks to each other via the scripts-->
+        <!--        we can do that to our react easily since its code is scalable-->
 
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+            onclick="alert(x+y)"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+            onclick="alert('nishank')"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
   </body>
-  <script src="eventBasics.js"></script>
+  <script>
+    // the better way for the onclick event apple would be
+    //*  still onclicks should not be used
+    //!  document.getElementById("owl").onclick(alert("this is via the third method")) //? wrong method
+    // document.getElementById("owl").onclick((e)=>{alert("this is via the third method")}) //? another wrong method
+    // document.getElementById("owl").onclick = (e)=>{alert("this is the third method")} //? the right method
+    // * if we really want to use this method we should use event listeners
+
+    document.querySelector("#owl").addEventListener("mouseenter", (e) => {
+      alert("nishank");
+    });
+  </script>
 </html>
