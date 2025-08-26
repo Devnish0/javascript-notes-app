@@ -97,7 +97,7 @@ document.getElementById("images").addEventListener(
 document.getElementById("google").addEventListener(
   "click",
   (e) => {
-    // e.preventDefault(); //? prevents the default behaviour such as opening the link
+    e.preventDefault(); //? prevents the default behaviour such as opening the link
     // e.stopPropagation(); //? prevents the propogation
   },
   false
@@ -125,6 +125,7 @@ list.addEventListener(
   "click",
   (e) => {
     console.log(e.target.parentNode);
+    console.log(e.target.tagName)
     let removeIt = e.target.parentNode;
     //? e = event
     //? target = which id or event
@@ -134,15 +135,31 @@ list.addEventListener(
     //* removeIt.remove(); //* removes the complete elementparentNode
 
     //? 2nd way to remove -
-    removeIt.parentNode.removeChild(removeIt);
+    //* removeIt.parentNode.removeChild(removeIt);
 
     //! here when clicked on the list item it removes the entire ul(its parent)
+      // ! to deal with it we can add some checks
+      console.log(e.target.parentNode)
+      if (e.target.tagName === 'IMG' || e.target.tagName === 'A' ){
+          let removeChild = e.target.parentNode
+          removeChild.parentNode.removeChild(removeChild)
+      }
+      //? here if the tagName is IMG or A then remove the child else dont
+
+
 
 
   },
   false
 );
-//* need to learn about
+//! some of the useful events
+//? e.preventDefault
+//? e.target - gives the target item
+//? e.parentNode - give the parent of the clicked
+//? e.childNode - give the child of the clicked
+//? e.target.tagName - IMG, UL
+//? e.target.id - give the id of
+// * need to learn about
 // type, timestamp , defaultPreveted
 // target , toElement , srcElement, currentTarget
 // clientX , clientY , screenX , screenY
