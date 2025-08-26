@@ -59,7 +59,7 @@
 
 // "pointerdown", "pointerup" → newer unified mouse/touch events
 
-document.querySelector("#owl").addEventListener("mouseleave", (e) => {
+document.querySelector("#owl").addEventListener("contextmenu", (e) => {
   alert("nishank ");
 });
 
@@ -72,8 +72,32 @@ document.querySelector("#owl").addEventListener("mouseleave", (e) => {
 document.querySelector("#owl").addEventListener(
   "click",
   (e) => {
-    console.log(e);
+    // console.log(e);
     // gives us access to alot of information
   },
-  false //
+  false
 );
+document.getElementById("images").addEventListener(
+  "click",
+  (e) => {
+    console.log("clicked inside ul");
+  },
+  false
+);
+document.getElementById("owl").addEventListener(
+  "click",
+  (e) => {
+    console.log("clicked on owl");
+  },
+  false
+);
+//* event propogation (bubbleing from small to larger)
+//? the element clicked will be shown from smaller to larger
+//? example when the owl was clicked first owl was shown then the ul
+
+//* it is false doesnt matter if we type it or not
+//* need to learn about
+// type, timestamp , defaultPreveted
+// target , toElement , srcElement, currentTarget
+// clientX , clientY , screenX , screenY
+// altkey , ctrlkey , shiftkey , keyCode
