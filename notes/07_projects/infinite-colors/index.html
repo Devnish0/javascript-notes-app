@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>infinite_colors</title>
+</head>
+<body>
+<p>start or end to change the colors</p>
+
+<button id="start">start</button>
+<button id="stop">stop</button>
+
+</body>
+<script>
+    const start = document.querySelector("#start")
+    const end = document.querySelector("#stop")
+    const p = document.querySelector("p")
+    const body = document.querySelector("body")
+    // !random color generator
+    function randomcolorgenerator(){
+        return `#${Math.round(Math.random()*1000000)}`
+    }
+    function colorgenerator(){
+        const hex = "0123456789ABCDEF"
+        let color ="#"
+        for(let i = 0; i<6; i++){
+            color += hex[Math.floor(Math.random()*16)]
+        }
+        return color
+    }
+    start.addEventListener("click",()=>{
+        const interval = setInterval((e)=>{
+            p.innerText="hey there"
+            console.log(colorgenerator())
+            body.style.backgroundColor = colorgenerator()
+        },500)
+        end.addEventListener("click",()=>{
+            clearInterval(interval)
+        })
+    })
+    console.log(randomcolorgenerator())
+
+</script>
+
+</html>
