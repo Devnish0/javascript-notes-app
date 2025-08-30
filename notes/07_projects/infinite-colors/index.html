@@ -31,17 +31,23 @@
         }
         return color
     }
-    start.addEventListener("click",()=>{
-        const interval = setInterval((e)=>{
-            p.innerText="hey there"
-            console.log(colorgenerator())
-            body.style.backgroundColor = colorgenerator()
-        },500)
-        end.addEventListener("click",()=>{
-            clearInterval(interval)
-        })
-    })
-    console.log(randomcolorgenerator())
+    let interval
+    function startchangingcolor (){
+        if(!interval){ //! if interval is null then then only run otherwise dont
+            interval = setInterval((e)=>{
+                p.innerText="hey there"
+                console.log(colorgenerator())
+                body.style.backgroundColor = colorgenerator()
+            },500)
+        }
+         }
+    function stopchangingcolor(){
+        clearInterval(interval)
+        interval = null;
+    }
+    start.addEventListener("click", startchangingcolor);
+    end.addEventListener("click", stopchangingcolor);
+
 
 </script>
 
