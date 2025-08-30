@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>three</title>
+  </head>
+  <body>
+    <h1>Chai and javascript</h1>
+    <button id="start">start</button>
+    <button id="end">end</button>
+  </body>
+  <script>
+    const start = document.querySelector("#start");
+    const end = document.querySelector("#end");
+
+    start.addEventListener("click", (e) => {
+      const interval = setInterval((e) => {
+        console.log("chai aur code", Date.now());
+      }, 1000);
+      end.addEventListener("click", (e) => {
+        clearInterval(interval);
+      });
+    });
+  </script>
+</html>
