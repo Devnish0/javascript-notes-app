@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>apiHandling</title>
+  </head>
+  <body
+    style="
+      background-color: #212121;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    "
+  >
+    <h1>your github profile will get checked here</h1>
+    <input type="text" placeholder="username here please" id="inp" />
+    <button type="submit" id="sbt">submit the info</button>
+    <img id="img" / width="200" height="200">
+    <p id="flwr">
+      name: null <br />
+      follower count : null <br />
+      following count: null <br />
+      public repository: null <br />
+      bio: null <br />
+    </p>
+  </body>
+  <script>
+    <!--    ajax part -->
+
+    const inp = document.getElementById("inp");
+    const sbt = document.getElementById("sbt");
+
+    sbt.addEventListener("click", () => {
+      let user = inp.value;
+
+      let data;
+      const xhr = new XMLHttpRequest();
+      const theUrl = `https://api.github.com/users/${inp.value}`;
+      xhr.open("GET", theUrl);
+      // console.log(xhr.readyState); //1 (current state of api)(not dynamic)
+      xhr.onreadystatechange = () => {
+        // when the state is changed do the function
+        //   console.log(e);
+        console.log(xhr.readyState);
+
+        if (xhr.readyState === 4) {
+          data = JSON.parse(xhr.responseText);
+          console.log(data.avatar_url);
+          const flwr = document.getElementById("flwr");
+          const img = document.getElementById("img");
+          img.setAttribute("src", data.avatar_url);
+
+          flwr.innerHTML = `name: ${data.name} <br />
+        follower count : ${data.followers} <br />
+        following count: ${data.following} <br />
+        public repository: ${data.public_repos} <br />
+        bio: ${data.bio} <br />`;
+        }
+      };
+      xhr.send();
+    });
+  </script>
+</html>
