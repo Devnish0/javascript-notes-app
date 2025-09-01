@@ -1,0 +1,31 @@
+/* 
+=======================================
+📏 CSS Units Overview
+=======================================
+
+🔹 ABSOLUTE UNITS
+   - px   : Pixels (most common absolute unit)
+   - pt   : Points
+   - cm   : Centimeters
+   - mm   : Millimeters
+   - in   : Inches
+   - (These do not scale with screen size)
+
+🔹 RELATIVE UNITS
+
+   • Relative to viewport:
+     - vw   : 1% of viewport width
+     - vh   : 1% of viewport height
+     - vmin : 1% of the smaller of viewport width/height
+     - vmax : 1% of the larger of viewport width/height
+
+   • Relative to font size:
+     - em   : Relative to the font size of the element
+     - rem  : Relative to the font size of the root element
+
+🔹 PERCENTAGE (%)
+   - Commonly used for widths and layout responsiveness
+   - Relative to the parent element
+   - ⚠️ Height percentages can behave unexpectedly depending on the parent
+
+*/
